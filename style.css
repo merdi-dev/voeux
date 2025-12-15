@@ -1,0 +1,155 @@
+ body {
+     font-family: 'Arial', sans-serif;
+     background-color: #fce4ec;
+     /* Rose doux */
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+     margin: 0;
+     overflow: hidden;
+ }
+
+ .container {
+     background-color: #fff;
+     padding: 40px;
+     border-radius: 15px;
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+     text-align: center;
+     position: relative;
+     z-index: 1;
+ }
+
+ h1 {
+     color: #e91e63;
+     /* Rouge passion */
+     font-size: 2.5em;
+     margin-bottom: 20px;
+ }
+
+ #message {
+     font-size: 1.2em;
+     color: #333;
+     margin-bottom: 30px;
+ }
+
+ button {
+     background-color: #ff4081;
+     /* Rose vif */
+     color: white;
+     border: none;
+     padding: 12px 25px;
+     border-radius: 50px;
+     font-size: 1.1em;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+ }
+
+ button:hover {
+     background-color: #b30442;
+ }
+
+ #wishBox {
+     margin-top: 30px;
+     padding: 20px;
+     border-left: 5px solid #ff4081;
+     background-color: #f8f8f8;
+     border-radius: 10px;
+ }
+
+ .wish-text,
+ .more-wish-text {
+     font-size: 1.3em;
+     color: #d81b60;
+     /* Rose plus foncé */
+     font-style: italic;
+ }
+
+ audio {
+     margin: 20px;
+     border-radius: 25px 200px;
+     color: #b30442;
+     background-color: transparent;
+ }
+
+ .hidden {
+     display: none;
+ }
+
+ /* Effet particules (cœurs) */
+ #particles-container {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     z-index: 0;
+ }
+
+ .heart {
+     position: absolute;
+     color: red;
+     font-size: 20px;
+     animation: fall 10s linear infinite;
+ }
+
+ @keyframes fall {
+     0% {
+         transform: translateY(-10vh) rotate(45deg);
+         opacity: 1;
+     }
+
+     100% {
+         transform: translateY(100vh) rotate(45deg);
+         opacity: 0;
+     }
+ }
+
+ .confetti {
+     position: absolute;
+     width: 10px;
+     height: 10px;
+     top: -20px;
+     border-radius: 2px;
+     animation: fall linear forwards;
+ }
+
+ @keyframes fall {
+     to {
+         transform: translateY(100vh) rotate(360deg);
+         opacity: 0;
+     }
+ }
+
+ /* Effet de transition doux*/
+ .container,
+ #wishBox {
+     transition: all 0.5s ease;
+ }
+
+ #wishBox {
+     opacity: 0;
+     transform: translateY(20px);
+     transition: opacity 0.5s, transform 0.5s;
+ }
+
+ #wishBox:not(.hidden) {
+     opacity: 1;
+     transform: translateY(0);
+ }
+
+ /* Responsive*/
+ @media (max-width: 768px) {
+     .container {
+         padding: 20px;
+         margin: 20px;
+     }
+
+     h1 {
+         font-size: 1.8em;
+     }
+
+     #message {
+         font-size: 1em;
+     }
+ }

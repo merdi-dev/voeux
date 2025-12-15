@@ -1,0 +1,97 @@
+const messages = [
+    "Bonne année à la femme la plus incroyable que je connaisse. J'espère que 2025 nous réserve de beaux moments... peut-être même plus que d'habitude ?",
+    "Cette année, mon plus beau souhait serait de découvrir un autre côté de toi. Bonne année 🎉🎊😘... ou peut-être plus ?",
+    "Ton sourire illumine mes journées, mes voeux de bonheur 🙌🎊",
+    "Je te souhaite une année remplie de bonheur, d'amour... et qui sait, peut-être que la personne parfaite pour toi est plus proche que tu ne le penses..😊🎇🎆",
+];
+
+function changerMessage() {
+    const messageElement = document.querySelector('.more-wish-text');
+    const randomIndex = Math.floor(Math.random() * messages.length);
+    messageElement.textContent = messages[randomIndex];
+}
+
+
+const btn = document.getElementById("more-wish-btn")
+btn.addEventListener("click", () => changerMessage());
+
+// Ajouter un bouton pour changer le message
+// Sélection des éléments
+const showWishBtn = document.getElementById("showWishBtn");
+const wishBox = document.getElementById("wishBox");
+
+// Action au clic sur le bouton
+showWishBtn.addEventListener("click", () => {
+    wishBox.classList.toggle("hidden"); // Affiche ou cache le message
+    if (!wishBox.classList.contains("hidden")) {
+        showWishBtn.textContent = "Masquer le message";
+        lancerConfettis(); // Lance les particules
+    } else {
+        showWishBtn.textContent = "Révéler mon message";
+    }
+});
+
+// Fonction pour créer des confettis simples
+function lancerConfettis() {
+    const container = document.getElementById("particles-container");
+
+    for (let i = 0; i < 30; i++) {
+        const confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+
+        // Position et couleur aléatoires
+        confetti.style.left = Math.random() * window.innerWidth + "px";
+        confetti.style.backgroundColor = couleursAleatoires();
+
+        // Animation
+        confetti.style.animationDuration = 2 + Math.random() * 3 + "s";
+
+        container.appendChild(confetti);
+
+        // Supprimer après animation
+        setTimeout(() => {
+            confetti.remove();
+        }, 5000);
+    }
+}
+
+// Génère une couleur aléatoire
+function couleursAleatoires() {
+    const couleurs = ["#ff4d6d", "#ffd93d", "#6bcf63", "#4d96ff", "#ff914d"];
+    return couleurs[Math.floor(Math.random() * couleurs.length)];
+}
+
+function creerCoeurs() {
+    const container = document.getElementById("particles-container");
+
+    for (let i = 0; i < 200; i++) {
+        const heart = document.createElement("div");
+        heart.innerHTML = "❤️🎊";
+        heart.classList.add("heart");
+
+        // Position aléatoire
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDelay = Math.random() * 5 + "s";
+        heart.style.fontSize = (15 + Math.random() * 20) + "px";
+
+        container.appendChild(heart);
+    }
+}
+
+const musicBtn = document.getElementById("musicBtn");
+const bgMusic = document.getElementById("bgMusic");
+let musicPlaying = false;
+
+musicBtn.addEventListener("click", () => {
+    if (musicPlaying) {
+        bgMusic.pause();
+        musicBtn.textContent = "🎵 Musique";
+    } else {
+        bgMusic.play();
+        musicBtn.textContent = "🔇 Musique";
+    }
+    musicPlaying = !musicPlaying;
+});
+
+// Appeler au chargement
+window.onload = creerCoeurs;

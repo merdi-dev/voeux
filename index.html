@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>❤️ Pour la personne que j'adore</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>À ma douce honey 😘</h1>
+        <p id="message" style="margin: 25px; font-size: 25px;">
+            Happy New Year ! 🎉
+            <br />
+            And
+            <br />
+            And my best whiches ! 🙈
+        </p>
+        <button id="showWishBtn">Révéler mon message</button>
+
+        <div id="wishBox" class="hidden">
+            <p class="wish-text">
+                Je te souhaite 12 mois de bonheur, 52 semaines de réussite et 365 jours de sourires. Bonne année honey.
+                Je t'aime
+                infiniment !
+            </p>
+
+            <p class="more-wish-text"></p>
+
+            <div style="display: flex; justify-content: center; align-items: center; gap: 5%; margin: 18px;">
+                <audio id="bgMusic" autoplay loop controls style="height: 32px; width: 25%;">
+                    <source src="./music/music_3.mp3" type="audio/mpeg">
+                    <source src="./music/music_1.mp3" type="audio/mpeg">
+                    <source src="./music/music_2.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <button id="musicBtn" style="margin-top: 1px;">🎵 Musique</button>
+            <button id="more-wish-btn">Plus de message</button>
+        </div>
+    </div>
+
+    <div id="particles-container"></div>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>
