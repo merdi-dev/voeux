@@ -11,7 +11,6 @@ function changerMessage() {
     messageElement.textContent = messages[randomIndex];
 }
 
-
 const btn = document.getElementById("more-wish-btn")
 btn.addEventListener("click", () => changerMessage());
 
@@ -78,7 +77,44 @@ function creerCoeurs() {
     }
 }
 
+// LECTURE AUDIO
+const audio1 = document.getElementById('audio1');
+const audio2 = document.getElementById('audio2');
+const audio3 = document.getElementById('audio3');
+const audio4 = document.getElementById('audio4');
+const audio5 = document.getElementById('audio5');
 const musicBtn = document.getElementById("musicBtn");
+
+let currentAudio = audio1;
+
+function playNext(current) {
+    if (current === audio1) {
+        currentAudio = audio2;
+    } else if (current === audio2) {
+        currentAudio = audio3;
+    } else if (current === audio3) {
+        currentAudio = audio4;
+    } else if (current === audio4) {
+        currentAudio = audio5;
+    } else {
+        currentAudio = audio1; // Retour au début
+    }
+    currentAudio.play();
+}
+
+// Démarre la boucle au clic sur le bouton
+musicBtn.addEventListener('click', () => {
+    audio1.play(); // Démarre le premier
+});
+
+// Quand un audio finit, joue le suivant
+audio1.addEventListener('ended', () => playNext(audio1));
+audio2.addEventListener('ended', () => playNext(audio2));
+audio3.addEventListener('ended', () => playNext(audio3));
+audio3.addEventListener('ended', () => playNext(audio4));
+audio3.addEventListener('ended', () => playNext(audio4));
+
+/* 
 const bgMusic = document.getElementById("bgMusic");
 let musicPlaying = false;
 
@@ -91,7 +127,7 @@ musicBtn.addEventListener("click", () => {
         musicBtn.textContent = "🔇 Musique";
     }
     musicPlaying = !musicPlaying;
-});
+}); */
 
 // Appeler au chargement
 window.onload = creerCoeurs;
