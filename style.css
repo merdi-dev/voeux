@@ -20,11 +20,27 @@
      z-index: 1;
  }
 
+ #effet {
+     font-size: 25px;
+     animation: RotationEffet 2s infinite linear;
+ }
+
+ @keyframes RotationEffet {
+     from {
+         transform: rotate(0deg);
+     }
+
+     to {
+         transform: rotate(360deg);
+     }
+ }
+
+
  h1 {
      color: #e91e63;
      /* Rouge passion */
      font-size: 2em;
-     margin-bottom: 20px;
+     margin-bottom: 26px;
  }
 
  #message {
@@ -41,12 +57,33 @@
      padding: 12px 25px;
      border-radius: 50px;
      font-size: 1.1em;
+     font-weight: bold;
      cursor: pointer;
      transition: background-color 0.3s ease;
  }
 
  button:hover {
-     background-color: #b30442;
+     background-color: #6e0127;
+     transform: translateY(2px);
+ }
+
+ #up-down {
+     font-size: 25px;
+     animation: UpDownEvent 3s infinite;
+ }
+
+ @keyframes UpDownEvent {
+     0% {
+         transform: translateY(0px);
+     }
+
+     50% {
+         transform: translateY(-15px);
+     }
+
+     100% {
+         transform: translateY(0px);
+     }
  }
 
  #wishBox {

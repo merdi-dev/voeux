@@ -56,7 +56,7 @@ function lancerConfettis() {
 
 // Génère une couleur aléatoire
 function couleursAleatoires() {
-    const couleurs = ["#ff4d6d", "#ffd93d", "#6bcf63", "#4d96ff", "#ff914d"];
+    const couleurs = ["#ff4d6d", "#ffd93d", "#6bcf63", "#4d96ff", "#ff914d", "#000000", "#ffffff", "rgba(255, 255, 0, 0.84)"];
     return couleurs[Math.floor(Math.random() * couleurs.length)];
 }
 
