@@ -3,6 +3,67 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>Valentine</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .btn {
+            padding: 14px 48px;
+            margin: 20px;
+            font-size: 18px;
+            border-radius: 12px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        #non {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body class="text-center mt-15">
+    <h1 class="bg-red-50 py-6 px-18 font-bold text-2xl">Hey Honey !</h1>
+    <h2 class="bg-sky-50 text-red-900 text-xl py-8 mb-6">T'es ma valentine ? N'est-ce pas ?</h2>
+
+    <button id="oui" class="btn relative text-sm rounded-xl cursor-pointer bg-sky-200">Oui 💖</button>
+    <button id="non" class="btn relative text-sm rounded-xl cursor-pointer bg-gray-100">Non 💔</button>
+
+    <script>
+        const nonBtn = document.getElementById("non");
+        const ouiBtn = document.getElementById("oui");
+
+        // Position initiale du bouton "Non"
+        nonBtn.style.left = "100px";
+        nonBtn.style.top = "100px";
+
+        // Quand la souris approche du bouton "Non", il bouge
+        nonBtn.addEventListener("mouseover", () => {
+            const x = Math.floor(Math.random() * (window.innerWidth - 100));
+            const y = Math.floor(Math.random() * (window.innerHeight - 100));
+            nonBtn.style.left = x + "px";
+            nonBtn.style.top = y + "px";
+        });
+
+        // Action si on clique sur "Oui"
+        ouiBtn.addEventListener("click", () => {
+            alert("Yay ❤️😘 Je t'aime énormement ma chérie !");
+        });
+    </script>
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
     <meta name="theme-color" content="#1bb566" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>❤️🎊Voeux de bonheur</title>
@@ -35,14 +96,14 @@
             <p class="more-wish-text"></p>
 
             <div style="display: flex; justify-content: center; align-items: center; gap: 5%; margin: 18px;">
-                <!--  <audio id="bgMusic" autoplay loop controls style="height: 32px; width: 25%;">
+                <audio id="bgMusic" autoplay loop controls style="height: 32px; width: 25%;">
                     <source id="audio1" src="./music/music_3.mp3" type="audio/mpeg" preload="auto">
                     <source id="audio2" src="./music/music_2.mp3" type="audio/mpeg" preload="auto">
                     <source id="audio3" src="./music/music_1.mp3" type="audio/mpeg" preload="auto">
                     <source id="audio4" src="./music/music_5.mp3" type="audio/mpeg" preload="auto">
                     <source id="audio5" src="./music/music_4.mp3" type="audio/mpeg" preload="auto">
                     Your browser does not support the audio element.
-                </audio> -->
+                </audio> 
 
                 <audio id="audio1" src="./music/music_3.mp3" type="audio/mpeg" autoplay>
                     <audio id="audio2" src="./music/music_2.mp3" type="audio/mpeg" preload="auto">
@@ -61,4 +122,4 @@
     <script src="./main.js"></script>
 </body>
 
-</html>
+</html> -->
