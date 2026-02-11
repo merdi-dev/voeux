@@ -13,7 +13,7 @@
         }
 
         .btn {
-            padding: 14px 48px;
+            padding: 12px 38px;
             margin: 20px;
             font-size: 18px;
             border-radius: 12px;
@@ -28,19 +28,23 @@
 </head>
 
 <body class="text-center mt-15">
-    <h1 class="bg-red-50 py-6 px-18 font-bold text-2xl">Hey Honey !</h1>
-    <h2 class="bg-sky-50 text-red-900 text-xl py-8 mb-6">T'es ma valentine ? N'est-ce pas ?</h2>
+    <h1 class="bg-red-50 py-6 px-18 font-bold text-3xl">Hey Honey !</h1>
+    <h2 class="bg-sky-50 text-red-900 text-2xl py-8 mb-6">T'es ma valentine ? N'est-ce pas ?</h2>
 
-    <button id="oui" class="btn relative text-sm rounded-xl cursor-pointer bg-sky-200">Oui 💖</button>
-    <button id="non" class="btn relative text-sm rounded-xl cursor-pointer bg-gray-100">Non 💔</button>
+    <button id="oui"
+        class="btn relative text-sm rounded-xl cursor-pointer bg-sky-200 border-2 border-gray-50 shadow-md">Oui
+        💖</button>
+    <button id="non"
+        class="btn relative text-sm rounded-xl cursor-pointer bg-gray-200 border-2 border-gray-50 shadow-md">Non
+        💔</button>
 
     <script>
         const nonBtn = document.getElementById("non");
         const ouiBtn = document.getElementById("oui");
 
         // Position initiale du bouton "Non"
-        nonBtn.style.left = "100px";
-        nonBtn.style.top = "100px";
+        nonBtn.style.left = "150px";
+        nonBtn.style.top = "150px";
 
         // Quand la souris approche du bouton "Non", il bouge
         nonBtn.addEventListener("mouseover", () => {
